@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图练习</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #container{
+            width: 750px;
+            position: relative;
+            margin: 50px auto;
+        }
+        #img img{
+            display: none;
+        }
+        #img img.active{
+            display: block;
+        }
+        #tab ul li{
+            list-style: none;
+            width: 25px;
+            height: 25px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+        #tab ul li.active{
+            background-color: red;
+        }
+        #tab ul{
+            display: flex;
+            position: absolute;
+            right: 80px;
+            bottom: 25px;
+            width: 140px;
+            justify-content: space-between;
+        }
+        #btn div{
+            position: absolute;
+            width: 50px;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-size: 50px;
+            text-align: center;
+            line-height: 80px;
+            color: white;
+            top: 50%;
+            margin-top: -40px;
+        }
+        #prev{
+            left: 0;
+
+        }
+        #next{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <div id="img">
+                <img src="img/1.jpg" alt="" class="active">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+            </div>
+            <div id="tab">
+                <ul>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            <div id="btn">
+                <div id="prev"><</div>
+                <div id="next">></div>
+            </div>
+            </div>
+    </div>
+
+    <script>
+        var oTab=document.getElementById('tab');
+        var aLi=oTab.getElementsByTagName('li');
+
+        var oImg=document.getElementById('img');
+        var aImg=oImg.getElementsByTagName('img');
+
+        var curIndex=0;
+
+        function change(){
+            for(var j=0;j<aLi.length;j++)
+                {
+                    aLi[j].className=' ';
+                    aImg[j].className=' ';
+                }
+            
+            aLi[curIndex].className='active';
+            aImg[curIndex].className='active';
+        }
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onclick=function(){
+                curIndex=this.index;
+                change();
+            }
+        }
+    //  翻页
+        var oPrev=document.getElementById('prev');
+        var oNext=document.getElementById('next');
+
+        oNext.onclick=function(){
+            curIndex+=1;
+            if(curIndex>4){curIndex=0;}
+            change();
+        }
+
+        oPrev.onclick=function(){
+            curIndex-=1;
+            if(curIndex<0){curIndex=4;}
+            change();
+        }
+
+        // 自动翻页
+        var oContainer = document.getElementById('container');
+        var timer;
+    function go(params) {
+      // 自动翻页
+      timer = setInterval(function (params) {
+        oNext.onclick()
+      }, 1000);
+    }
+    go()
+
+    oContainer.onmouseout = function () {
+      go()
+    }
+    oContainer.onmouseover = function () {
+      // 停止翻页
+      clearInterval(timer)
+    }
+
+
+    </script>
+</body>
+</html>

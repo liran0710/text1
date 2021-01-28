@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡练习</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    #contain{
+        width: 300px;
+        margin: 0 auto;
+        background-color: brown;
+    }
+    li{
+        list-style: none;
+    }
+    #nav li{
+        float: left;
+        height: 40px;
+        width: 100px;
+        text-align: center;
+        line-height: 40px;
+    }
+    #nav{
+        height: 40px;
+        border-bottom: 1px solid black;
+    }
+    #content{
+        height: 300px;
+    }
+    #content>div{
+        display: none;
+    }
+    #content>div.active{
+        display: block;
+    }
+    #nav>li.active{
+        background-color: blue;
+        color: cornsilk;
+    }
+</style>
+<body>
+    <div id="contain">
+        <ul id="nav">
+            <li class="active">菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul> 
+    <div id="content">
+        <div class="active">111111</div>
+        <div>222222</div>
+        <div>333333</div>
+    </div>
+    </div>
+    <script>
+        var oNav=document.getElementById('nav');
+        var aLi=oNav.getElementsByTagName('li');
+        
+        var oContent=document.getElementById('content');
+        var aDiv=oContent.getElementsByTagName('div');
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onclick=function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className=' ';
+                    aDiv[j].className=' ';
+                }
+                this.className='active';
+                aDiv[this.index].className='active';
+            }
+        }
+       
+    </script>
+</body>
+</html>

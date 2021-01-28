@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header {
+    background: #333333;
+  }
+  header a {
+    color: #ffffff;
+    font-size: 12px;
+  }
+  .header-nav {
+    height: 40px;
+  }
+  header .link-list {
+    display: flex;
+  }
+
+
+
+  nav {
+    height: 100px;
+  }
+  nav img {
+    width: 175px;
+  }
+  nav > ul {
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav ul a {
+    font-size: 18px;
+    color: #212121;
+  }
+  nav ul a:hover {
+    color: #e94400;
+  }
+  nav ul a.active {
+    color: #e94400;
+  }
+  nav ul li.money{
+    position: relative;
+  }
+  nav ul li a.toggle{
+    padding-bottom: 30px;
+  }
+  nav ul li.money a:hover + .sub-nav{
+    display: block;
+  }
+  nav ul .sub-nav {
+    display: none;
+    text-align: center;
+    width: 150px;
+    height: 80px;
+    padding: 10px 0;
+    position: absolute;
+    left: -55px;
+    top:40px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+  }
+  nav ul .sub-nav:hover{
+    display: block;
+  }
+  nav ul .sub-nav::before{
+    position: absolute;
+    left: 65px;
+    top: -7px;
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    border-right: none;
+    background: #ffffff;
+    transform: rotate(45deg);
+  }
+  nav ul .sub-nav li {
+    height: 50%;
+  }
+  nav ul .sub-nav a {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+  }
+  nav ul .sub-nav a:hover {
+    background: #e5e5e5;
+  }
+
+
+
+#banner {
+    height: 640px;
+    background: url("./images/banner.jpg") center 0;
+    text-align: center;
+}
+
+#banner h2 {
+    color: #ffffff;
+    font-size: 54px;
+    font-weight: 300;
+    padding-top: 193px;
+}
+
+#banner button {
+    color: #fff;
+    font-size: 24px;
+    background: #F93F2B;
+    width: 260px;
+    height: 60px;
+    line-height: 60px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 36px;
+}
+
+#banner button:hover,#banner button:active {
+    background: #e83a27;
+}
+
+
+main.wrapper {
+    overflow: hidden;
+    background: #ffffff;
+    margin-top: -80px;
+    border: 1px solid #E6E6E6;
+}
+
+.info-item {
+    margin: 30px;
+    margin-right: 0;
+    float: left;
+}
+
+.info-item a {
+    color: #ffffff;
+    font-size: 33px;
+}
+
+.item-img {
+    width: 360px;
+    height: 180px;
+    background: url(./images/bg1.png);
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 44px 30px;
+}
+
+.item-img {
+    background-image: url(./images/bg2.png);
+}
+
+.item-img h2 {
+    font-size: 33px;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.info-content {
+    color: #666666;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+.info-content li {
+    height: 42px;
+    line-height: 42px;
+}
+
+.info-content span {
+    color: #EA5600;
+}
+
+.list-blue .info-content span {
+    color: #4481C8;
+}
+
+.info .info-more {
+    color: #FD3911;
+    border-top: 1px solid #ECECEC;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 30px;
+    padding-top: 20px;
+}
+
+footer {
+    height: 209px;
+}
+
+footer .footer-img {
+    width: 46px;
+    height: 46px;
+    float: left;
+    margin-right: 8px;
+}
+
+.footer-left {
+    float: left;
+    margin-top: 109px;
+}
+
+.footer-left-content {
+    float: left;
+    padding-top: 3px;
+}
+
+.footer-left-content ul {
+    margin-bottom: 10px;
+}
+
+.footer-left-content li {
+    float: left;
+    padding: 0 8px;
+    border-right: 1px solid #575757;
+    color: #6D6D6D;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.footer-left-content li:last-child {
+    border: none;
+}
+
+.footer-left-content li a {
+    color: #575757;
+    font-size: 14px;
+    display: block;
+}
+
+.footer-right {
+    float: right;
+    margin-top: 90px;
+    color: #575757;
+}
+
+.footer-right h5 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.footer-right .tel {
+    color: #E84519;
+    font-size: 26px;
+}
+
+.footer-right .time {
+    font-size: 12px;
+}
+
+  
